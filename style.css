@@ -1,0 +1,98 @@
+.snaplogo {
+  max-height: 200px;
+  margin: 20px;
+  
+}
+
+body {
+  background: linear-gradient(
+    110.6deg,
+    rgb(184, 142, 252) 2.2%,
+    rgb(104, 119, 244) 100.2%
+  );
+  background-image: url(Images/ColourPurpleEdit.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  font-weight: 900;
+  font-size: 38pt;
+  line-height: 1;
+ color:rgb(223, 213, 213);
+  text-align: center;
+  
+}
+h2 {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  color: #17f8de;
+  font-size: 23pt;
+  font-weight:lighter;
+  line-height: 1px;
+}
+h3 {
+  font-size: 20pt;
+  font-family: sans-serif;
+  color: #482c6a;
+  margin: 0;
+}
+
+.name-selection p {
+  font-size: 16pt;
+  color: #482c6a;
+  font-family: sans-serif;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  max-height: 1200;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  height: 600px;
+  overflow: auto; /* Automatically adds scrollbars as needed */
+  overflow-clip-margin: initial;
+  
+
+}
+
+input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+}
+.viewer-comment {
+  border-bottom: 2px dotted rgba(0, 0, 0, 0.2);
+  padding: 40px;
+}
+.viewer-comment:last-child {
+  border: none;
+}
+header {
+  margin-bottom: 30px;
+}
+
+.comments-butt {
+  display: block;
+  margin: 60px auto;
+  font-size: 20pt;
+  border-radius: 50px;
+  border: none;
+  padding: 20px;
+  background:#03a592;
+  color: white;
+  margin-top: 30px;
+  width: 500px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 150ms ease-in-out;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.comments-butt:hover {
+  background: rgb(202, 94, 148);
+  color: #fdfcfd;
+ 
+  cursor: pointer;
+}
