@@ -5,3 +5,11 @@ function saveComments(event) {
 //submittion to the k-drive comes here
 let button = document.querySelector("button");
 button.addEventListener("click", saveComments);
+
+function populateComments(event) {
+  event.preventDefault()
+  alert("Howdy..!!")
+}
+
+let ticker = document.querySelector("#check-box")
+ticker.addEventListener("click", populateComments)
