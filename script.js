@@ -3,6 +3,17 @@ function saveComments(event) {
   alert("Hello")
 }
 //submittion to the k-drive comes here
+
+function itsEmpty() {
+    let emptyCommentSection=document.querySelector(".viewer-comment")
+emptyCommentSection.innerHTML="No comments right now"
+
+ if (condition) {
+
+ } 
+}
+
+
 let button = document.querySelector("button");
 button.addEventListener("click", saveComments);
 
