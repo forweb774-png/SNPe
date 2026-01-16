@@ -20,7 +20,6 @@ let fetchData = async (url) => {
     return response.data;
   } catch (error) {
     console.error("Error fetching data:", error);
-   
   }
 };
 
