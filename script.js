@@ -1,14 +1,10 @@
 import axios from 'axios';
 
-axios.get('https://jsonplaceholder.typicode.com/posts')
-  .then(response => {
-    console.log(response.data); // API data
-  })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-  });
+axios.defaults.baseURL = 'https://etv.sodyo.com/integration/api/v1/project/9e72b9f4-5662-4b0a-a0e7-a4b253f4ff7b/content/5271c5ee-4c5f-4022-a699-4ac895353028/interactions' ;
+axios.defaults.headers.common['Authorization'] = 'Bearer your-token';
+axios.get('/posts'); // No need to repeat the full URL
 
-
+console.log(baseURL)
 //DATA EXTRACTION
 function getSelectedCheckboxValues() {
   // Select all checked checkboxes with the name "interest"
