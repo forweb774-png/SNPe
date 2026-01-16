@@ -3,7 +3,6 @@
   margin: 20px;
   
 }
-
 body {
   background: linear-gradient(
     110.6deg,
@@ -19,8 +18,7 @@ h1 {
   font-size: 38pt;
   margin-bottom: 0 auto;
  color:rgb(223, 213, 213);
-  text-align: center;
-  
+  text-align: center;  
 }
 h2 {
   text-align: center;
@@ -37,7 +35,6 @@ h3 {
   color: #482c6a;
   margin: 0;
 }
-
 .name-selection p {
   font-size: 16pt;
   color: #482c6a;
@@ -54,8 +51,6 @@ h3 {
   height: 600px;
   overflow: auto; /* Automatically adds scrollbars as needed */
   overflow-clip-margin: initial;
-  
-
 }
 
 input[type="checkbox"] {
@@ -73,7 +68,6 @@ input[type="checkbox"] {
 header {
   margin-bottom: 30px;
 }
-
 .comments-butt {
   display: block;
   margin: 60px auto;
