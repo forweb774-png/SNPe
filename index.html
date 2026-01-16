@@ -18,41 +18,68 @@
       href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
     <title>Snap-E</title>
   </head>
   <body>
     <img src="Images/Snap.png" alt="" class="snaplogo" />
 
     <header>
-      <h1>COMMENTS</h1>
+      <h1>COMMENTS..</h1>
       <h2>Click on comment box to make your selection</h2>
     </header>
     <div class="container">
-      <div class="scroll-bar">
-      </div>
+      <div class="scroll-bar"></div>
       <div class="viewer-comment">
         <div class="name-selection">
-          <input type="checkbox" name="comment-data" id="check-box" />
-          <h3>@UsernameORsomething</h3>
+          <form id="viewer-comment">
+            <label
+              ><input type="checkbox" name="interest" value="Python" />
+              <div class="textGoesHere">
+                <h3>@UsernameORsomething</h3>
 
-          <p> Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
-          </p>
-        </div>
-      </div>
-      <div class="viewer-comment">
-        <div class="name-selection">
-          <input type="checkbox" name="comment-data" id="check-box" />
-          <h3>@AnotherUser</h3>
+                <p>
+                  Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor
+                  eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+                  dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+                  nulla ut metus varius laoreet. Quisque rutrum. Aenean
+                  imperdiet. Etiam ultricies nisi vel augue. Curabitur
+                  ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+                </p>
+              </div></label
+            ><br />
+            <label
+              ><input type="checkbox" name="interest" value="Python" />
+              <div>
+                <h3>@UsernameORsomething</h3>
 
-          <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. . Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.  Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
-          </p>
+                <p>
+                  Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor
+                  eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+                  dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+                  nulla ut metus varius laoreet. Quisque rutrum. Aenean
+                  imperdiet. Etiam ultricies nisi vel augue. Curabitur
+                  ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+                  Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor
+                  eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+                  dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+                  nulla ut metus varius laoreet. Quisque rutrum. Aenean
+                  imperdiet. Etiam ultricies nisi vel augue. Curabitur
+                  ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+                </p>
+              </div></label
+            >
+          </form>
         </div>
       </div>
     </div>
-    <button class="comments-butt">SAVE COMMENTS</button>
+    <button
+      type="button"
+      onclick="exportDataToSpreadsheet()"
+      class="comments-butt"
+    >
+      SAVE COMMENTS
+    </button>
   </body>
   <script src="script.js"></script>
 </html>
