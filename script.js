@@ -2,7 +2,7 @@ import axios from 'axios';
 
 let fetchData = async () => {
   try {
-    let response = await axios.get('https://etv.sodyo.com/integration/api/v1/project/9e72b9f4-5662-4b0a-a0e7-a4b253f4ff7b/content/5271c5ee-4c5f-4022-a699-4ac895353028/interactions' );
+    let response = await axios.get('https://etv.sodyo.com/integration/api/v1/project/{projectUuid}/content/{contentUuid}/interactions' );
 
     console.log(response.data); // The actual data returned by the API
     console.log(response.status); // HTTP status code (e.g., 200)
