@@ -1,26 +1,72 @@
-function saveComments(event) {
-  let yourSelection = document.querySelector("#check-box");
-  alert("Hello")
-}
-//submittion to the k-drive comes here
+function displayUsername(response) {
+  console.log(response.data);
 
-let button = document.querySelector("button");
-button.addEventListener("click", saveComments);
-
-function populateComments(event) {
-  event.preventDefault()
-  alert("Howdy..!!")
+  let viewerComments = document.querySelector(".textGoesHere");
+  viewerComments.innerHTML = `${response.data}`;
 }
 
-let ticker = document.querySelector("#check-box")
-ticker.addEventListener("click", populateComments)
+apiKey =
+  "https://etv.sodyo.com/integration/api/v1/project/{projectUuid}/content/{contentUuid}/interactions";
+let apiUrl =
+  "https://etv.sodyo.com/integration/api/v1/project/9e72b9f4-5662-4b0a-a0e7-a4b253f4ff7b/content/5271c5ee-4c5f-4022-a699-4ac895353028/interactions";
 
-function yourComments(city) {
-  let apiKey = "SA.97d6b0a296c3410bb74c551f3c14dcc2.129b6c31655413dec32ee22e0fc64c9158b6309f";
-  let apiLocation = `https://etv.sodyo.com/integration/api/v1/project/9e72b9f4-5662-4b0a-a0e7-a4b253f4ff7b/content/5271c5ee-4c5f-4022-a699-4ac895353028/interactions`;
-  console.log(apiLocation);
-  axios.get(apiUrl).then(displayForecast);
+axios.get(apiUrl).then(displayUsername);
+
+let fetchData = async (url) => {
+  try {
+    let response = await axios.get(url);
+    console.log(response.data); // The actual data is in the .data property
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    // Handle the error appropriately
+  }
+};
+
+fetchData(
+  "https://etv.sodyo.com/integration/api/v1/project/9e72b9f4-5662-4b0a-a0e7-a4b253f4ff7b/content/5271c5ee-4c5f-4022-a699-4ac895353028/interactions"
+);
+
+//DATA EXTRACTION
+function getSelectedCheckboxValues() {
+  // Select all checked checkboxes with the name "interest"
+  let checkboxes = document.querySelectorAll('input[name="interest"]:checked');
+  let selectedValues = [];
+
+  // Iterate over the selected checkboxes and push their values into the array
+  checkboxes.forEach((checkbox) => {
+    selectedValues.push(checkbox.value);
+  });
+
+  return selectedValues;
 }
+//POPULATION
+function exportDataToSpreadsheet() {
+  const data = getSelectedCheckboxValues();
+  if (data.length === 0) {
+    alert("Please select at least one option.");
+    return;
+  }
 
-function displayForecast(response) {
-  let forecastHtml = "";}
+  // Convert the array of values into a CSV format string
+  // Add a header row
+  let csvContent = "Selected Interests\n";
+  // Add each selected value as a new row
+  data.forEach((value) => {
+    csvContent += value + "\n";
+  });
+
+  // Create a Blob and generate a download link
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+
+  const downloadLink = document.createElement("a");
+  downloadLink.href = url;
+  downloadLink.setAttribute("download", "selected_data.csv"); // Specify the file name
+  document.body.appendChild(downloadLink);
+  downloadLink.click(); // Trigger the download
+
+  // Clean up
+  document.body.removeChild(downloadLink);
+  URL.revokeObjectURL(url);
+}
