@@ -1,3 +1,12 @@
+import axios from 'axios';
+
+axios.get('https://jsonplaceholder.typicode.com/posts')
+  .then(response => {
+    console.log(response.data); // API data
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
 
 
 //DATA EXTRACTION
