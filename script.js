@@ -1,17 +1,4 @@
-import axios from 'axios';
 
-let fetchData = async () => {
-  try {
-    let response = await axios.get('https://etv.sodyo.com/integration/api/v1/project/{projectUuid}/content/{contentUuid}/interactions' );
-
-    console.log(response.data); // The actual data returned by the API
-    console.log(response.status); // HTTP status code (e.g., 200)
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-};
-
-fetchData();
 
 //DATA EXTRACTION
 function getSelectedCheckboxValues() {
