@@ -1,31 +1,17 @@
-function displayUsername(response) {
-  console.log(response.data);
+import axios from 'axios';
 
-  let viewerComments = document.querySelector(".textGoesHere");
-  viewerComments.innerHTML = `${response.data}`;
-}
-
-apiKey =
-  "https://etv.sodyo.com/integration/api/v1/project/{projectUuid}/content/{contentUuid}/interactions";
-let apiUrl =
-  "https://etv.sodyo.com/integration/api/v1/project/9e72b9f4-5662-4b0a-a0e7-a4b253f4ff7b/content/5271c5ee-4c5f-4022-a699-4ac895353028/interactions";
-
-axios.get(apiUrl).then(displayUsername);
-
-let fetchData = async (url) => {
+let fetchData = async () => {
   try {
-    let response = await axios.get(url);
-    console.log(response.data); // The actual data is in the .data property
-    return response.data;
+    let response = await axios.get('https://etv.sodyo.com/integration/api/v1/project/9e72b9f4-5662-4b0a-a0e7-a4b253f4ff7b/content/5271c5ee-4c5f-4022-a699-4ac895353028/interactions' );
+
+    console.log(response.data); // The actual data returned by the API
+    console.log(response.status); // HTTP status code (e.g., 200)
   } catch (error) {
-    console.error("Error fetching data:", error);
-    // Handle the error appropriately
+    console.error('Error fetching data:', error);
   }
 };
 
-fetchData(
-  "https://etv.sodyo.com/integration/api/v1/project/9e72b9f4-5662-4b0a-a0e7-a4b253f4ff7b/content/5271c5ee-4c5f-4022-a699-4ac895353028/interactions"
-);
+fetchData();
 
 //DATA EXTRACTION
 function getSelectedCheckboxValues() {
