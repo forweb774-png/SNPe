@@ -15,7 +15,7 @@ function getSelectedCheckboxValues() {
 }
 //POPULATION
 function exportDataToSpreadsheet() {
-  const data = getSelectedCheckboxValues();
+  let data = getSelectedCheckboxValues();
   if (data.length === 0) {
     alert("Please select at least one option.");
     return;
